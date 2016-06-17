@@ -1,9 +1,13 @@
 ## Demonstrates using Auth0 with Java using plain Servlets and JSP pages.
 
-A simple, plain Java web application that demonstrates how to use Auth0 with Java for server-side MVC web apps.
+This is a companion sample for the [Auth0 Servlet](https://github.com/auth0/auth0-servlet) library.
+Please refer to that library and documentation for further information specific to the library itself.
+
+A simple (plain) Java web application that demonstrates how to use Auth0 with Java for server-side MVC web apps.
 Validates the JWT from Auth0 in every API call to assert authentication according to configuration. If your application only needs secured
-endpoints and the ability to programmatically work with a Principal object for GrantedAuthority checks this library is a good fit. However,
-if you are already using Java Spring and wish to leverage fully Java Spring Security - with powerful support for Security Annotations, Security
+endpoints and the ability to programmatically work with a Principal object for GrantedAuthority checks this library is a good fit.
+
+However, if you are already using Java Spring and wish to leverage fully Java Spring Security - with powerful support for Security Annotations, Security
 JSTL Tag libraries, Fine-grained Annotation level method security and URL endpoint security at the Role / Group level - then see this project
 [Auth0 Spring Security MVC](https://github.com/auth0/auth0-spring-security-mvc) and associated sample
 [Auth0 Spring Security MVC Sample](https://github.com/auth0-samples/auth0-spring-security-mvc-sample)
