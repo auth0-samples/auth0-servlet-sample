@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <web-app
-        xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-        version="2.5">
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5">
     <display-name>Auth0 Servlet Sample</display-name>
-
+    
     <!-- Servlets -->
     <servlet>
         <servlet-name>Home</servlet-name>
@@ -35,7 +35,7 @@
             <param-value>/login</param-value>
         </init-param>
     </servlet>
-
+    
     <!-- Servlet Mappings -->
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
@@ -53,7 +53,7 @@
         <servlet-name>Logout</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
-
+    
     <!-- Filters -->
     <filter>
         <filter-name>AuthFilter</filter-name>
@@ -67,27 +67,27 @@
         <filter-name>AuthFilter</filter-name>
         <url-pattern>/portal/*</url-pattern>
     </filter-mapping>
-
+    
     <!-- Error Pages-->
     <error-page>
         <error-code>404</error-code>
         <location>/login</location>
     </error-page>
-
+    
     <!-- Auth0 Configuration -->
     <context-param>
         <param-name>auth0.domain</param-name>
         <param-value>{DOMAIN}</param-value>
     </context-param>
-
+    
     <context-param>
         <param-name>auth0.client_id</param-name>
         <param-value>{CLIENT_ID}</param-value>
     </context-param>
-
+    
     <context-param>
         <param-name>auth0.client_secret</param-name>
         <param-value>{CLIENT_SECRET}</param-value>
     </context-param>
-
+    
 </web-app>
