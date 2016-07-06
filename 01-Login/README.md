@@ -1,6 +1,4 @@
-# Starter Seed for Auth0-Java Servlet Quickstart Guides
-
-This is a simple Java web application that is meant to be used as the starting point for [Auth0 Java Servlet Quickstart](https://auth0.com/docs/quickstart/webapp/java). 
+# Login example
 
 In order to run this example you will need to have Java 7+ and Maven installed.
 
@@ -20,5 +18,5 @@ Then, go to [http://localhost:3099/login](http://localhost:3099/login).
 
 Shut it down manually with Ctrl-C.
 
-Documentation: [Introduction](https://auth0.com/docs/quickstart/webapp/java)
+Documentation: [Login](https://auth0.com/docs/quickstart/webapp/java)
 
