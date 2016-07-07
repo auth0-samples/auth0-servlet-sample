@@ -18,5 +18,5 @@ Then, go to [http://localhost:3099/login](http://localhost:3099/login).
 
 Shut it down manually with Ctrl-C.
 
-Documentation: [Login](https://auth0.com/docs/quickstart/webapp/java)
+Documentation: [Login](https://auth0.com/docs/quickstart/webapp/java/01-login)
 
