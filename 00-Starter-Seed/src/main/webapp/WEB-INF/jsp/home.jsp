@@ -10,23 +10,6 @@
 
 <body>
 
-<div class="container">
-    <div class="header clearfix">
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <li class="active" id="home"><a href="#">Home</a></li>
-                <li id="logout"><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-        <h3 class="text-muted">App.com</h3>
-    </div>
-
-    <footer class="footer">
-        <p> &copy; 2016 Company Inc</p>
-    </footer>
-
-</div>
-
 <script type="text/javascript">
     //implement logout
 </script>
