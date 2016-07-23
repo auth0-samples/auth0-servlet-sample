@@ -17,9 +17,8 @@
             $.growl({title: "Welcome!", message: "Please log in"});
         });
         $(function () {
-            var lock = new Auth0Lock('${clientId}', '${domain}');
-            lock.showSignin({
-                authParams: {
+            var lock = new Auth0Lock('${clientId}', '${domain}', { auth: {
+                params: {
                     state: '${state}',
                     // change scopes to whatever you like
                     // claims are added to JWT id_token - openid profile gives everything
@@ -27,8 +26,9 @@
                 },
                 responseType: 'code',
                 popup: false,
-                callbackURL: '${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, '')}' + '/callback'
-            });
+                redirectUrl: '${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, '')}' + '/callback'
+            }});
+            lock.show();
         });
     </script>
 </div>
