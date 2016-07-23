@@ -86,8 +86,20 @@
     </context-param>
 
     <context-param>
+        <param-name>auth0.signing_algorithm</param-name>
+        <param-value>HS256</param-value>
+        <!--<param-value>RS256</param-value>-->
+    </context-param>
+
+    <context-param>
         <param-name>auth0.client_secret</param-name>
         <param-value>{CLIENT_SECRET}</param-value>
+    </context-param>
+
+    <!--only required when using RS256 - obtain cert.pem from Auth0 Dashboard for your Tenant-->
+    <context-param>
+        <param-name>auth0.public_key_path</param-name>
+        <param-value>/WEB-INF/certificate/cert.pem</param-value>
     </context-param>
 
 </web-app>
