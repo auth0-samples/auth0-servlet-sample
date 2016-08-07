@@ -56,8 +56,12 @@ or username-password DB connection.
 
 Enter your:
 
-`client_id`, `client_secret`, and `domain` information into `src/main/webapp/WEB-INF/web.xml`
+`auth0.domain`, `auth0.issuer`, `auth0.clientId`, and `auth0.clientSecret` into `src/main/webapp/WEB-INF/web.xml`
 
+Note:
+
+`auth0.issuer` should have the value `https://YOUR_DOMAIN.auth0.com/` (the trailing slash is important).
+For example, if your `auth0.domain` is `example.auth0.com` then `auth0.issuer` should have value `https://example.auth0.com/`.
 
 ### Build and Run
 
