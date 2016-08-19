@@ -87,7 +87,7 @@
 
     <context-param>
         <param-name>auth0.client_id</param-name>
-        <param-value>{AUTH0_CLIENT_ID}</param-value>
+        <param-value>{CLIENT_ID}</param-value>
     </context-param>
 
     <context-param>
