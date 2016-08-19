@@ -77,7 +77,7 @@
     <!-- Auth0 Configuration -->
     <context-param>
         <param-name>auth0.domain</param-name>
-        <param-value>{AUTH0_DOMAIN}</param-value>
+        <param-value>{DOMAIN}</param-value>
     </context-param>
 
     <context-param>
@@ -98,7 +98,7 @@
 
     <context-param>
         <param-name>auth0.client_secret</param-name>
-        <param-value>{AUTH0_CLIENT_SECRET}</param-value>
+        <param-value>{CLIENT_SECRET}</param-value>
     </context-param>
 
     <!--only required when using RS256 - obtain cert.pem from Auth0 Dashboard for your Tenant-->
