@@ -17,7 +17,7 @@
             $.growl({title: "Welcome!", message: "Please log in"});
         });
         $(function () {
-            var lock = new Auth0Lock('${clientId}', '${domain}', {
+            var lock = new Auth0Lock('${clientId}', '${clientDomain}', {
                 auth: {
                     redirectUrl: '${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, '')}' + '/callback',
                     responseType: 'code',

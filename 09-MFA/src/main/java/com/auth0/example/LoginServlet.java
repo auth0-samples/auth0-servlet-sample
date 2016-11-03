@@ -16,9 +16,9 @@ public class LoginServlet extends HttpServlet {
         // add a Nonce value to session storage
         NonceUtils.addNonceToStorage(req);
         final String clientId = getServletContext().getInitParameter("auth0.client_id");
-        final String domain = getServletContext().getInitParameter("auth0.domain");
+        final String clientDomain = getServletContext().getInitParameter("auth0.domain");
         req.setAttribute("clientId", clientId);
-        req.setAttribute("domain", domain);
+        req.setAttribute("clientDomain", clientDomain);
         req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, res);
     }
 
