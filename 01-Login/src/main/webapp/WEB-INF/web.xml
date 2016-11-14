@@ -101,6 +101,12 @@
         <param-value>{CLIENT_SECRET}</param-value>
     </context-param>
 
+    <!-- Auth0 secrets are not base64 encoded by default so leave as false -->
+    <context-param>
+        <param-name>auth0.base64_encoded_secret</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
     <!--only required when using RS256 - obtain cert.pem from Auth0 Dashboard for your Tenant-->
     <context-param>
         <param-name>auth0.public_key_path</param-name>
