@@ -16,10 +16,12 @@ import java.io.UnsupportedEncodingException;
 public class LoginServlet extends HttpServlet {
 
     private AuthenticationController authenticationController;
+    private String domain;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        domain = config.getServletContext().getInitParameter("com.auth0.domain");
         try {
             authenticationController = AuthenticationControllerProvider.getInstance(config);
         } catch (UnsupportedEncodingException e) {
@@ -32,6 +34,7 @@ public class LoginServlet extends HttpServlet {
         String redirectUri = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + "/callback";
 
         String authorizeUrl = authenticationController.buildAuthorizeUrl(req, redirectUri)
+                .withAudience(String.format("https://%s/userinfo", domain))
                 .build();
         res.sendRedirect(authorizeUrl);
     }
