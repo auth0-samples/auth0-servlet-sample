@@ -1,6 +1,8 @@
 # Auth0 Servlet Samples
 
-This sample demonstrates how to protect endpoints in a Java API by verifying an incoming JWT access token signed by Auth0. The token must be signed with the RS256 algorithm and must be verified against your Auth0 JSON Web Key Set.
+This sample demonstrates how to add authentication to a Java web app using Auth0.
+
+Check the [Java Quickstart](https://auth0.com/docs/quickstart/webapp/java-spring-mvc) to better understand of this sample.
 
 ## What is Auth0?
 
