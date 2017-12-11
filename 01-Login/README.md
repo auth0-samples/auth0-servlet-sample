@@ -50,7 +50,7 @@ Open a terminal, go to the project root directory and run the following command:
 ./gradlew clean appRun
 ```
 
-The server will be accessible on https://localhost:8080/portal/home. After logging in you should see the `token` in the header.
+The server will be accessible on http://localhost:8080/portal/home. After logging in you should see the `token` in the header.
 
 
 ## Issue Reporting
