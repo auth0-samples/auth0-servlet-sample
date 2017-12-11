@@ -52,6 +52,13 @@ Open a terminal, go to the project root directory and run the following command:
 
 The server will be accessible on http://localhost:8080/portal/home. After logging in you should see the `token` in the header.
 
+### Running the sample with Docker
+
+In order to run the example with docker you need to have `docker` installed.
+
+You also need to set the client credentials as explained [previously](#java-application).
+
+Execute in command line `sh exec.sh` to run the Docker in Linux, or `.\exec.ps1` to run the Docker in Windows.
 
 ## Issue Reporting
 
