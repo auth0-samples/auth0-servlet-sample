@@ -5,4 +5,4 @@ ADD . /home/gradle
 
 CMD ["gradle", "appRun"]
 
-EXPOSE 8080
+EXPOSE 3000

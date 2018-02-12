@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-docker build -t auth0-servlet-webapp .
-docker run -p 8080:8080 -it -v ~/.gradle:/home/gradle/.gradle auth0-servlet-webapp
+docker build -t auth0-samples/auth0-servlet-01-login .
+docker run -p 3000:3000 -it auth0-samples/auth0-servlet-01-login
