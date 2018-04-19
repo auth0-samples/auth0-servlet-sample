@@ -8,7 +8,7 @@ This sample demonstrates how to use Auth0 to perform authentication using the `m
 ### Auth0 Dashboard
 1. On the [Auth0 Dashboard](https://manage.auth0.com/#/clients) create a new Client of type `Regular Web Application`. 
 1. Add the URL that will be called on an OAuth successful login to the Allowed Callback URLs. i.e.: `https://mysite.com/callback`.
-1. Add the URL that will be called on logout to the Allowed Logout URLs. i.e.: `https://mysite.com/logout`.
+1. Add the URL that will be called on logout to the Allowed Logout URLs. i.e.: `https://mysite.com/portal/home`.
 1. Copy the `Domain`, `Client ID` and `Client Secret` values at the top of the page and use them to configure the Java Application.
 
 
