@@ -12,8 +12,8 @@ defaults: &defaults
       - run:
           name: Build pull request
           command: |
-            cd $SAMPLE_PATH/
-            sh exec.sh
+            docker build -t $CIRCLE_JOB ./$SAMPLE_PATH
+            docker run -d -it -p 3000:3000 --name $CIRCLE_SHA1 $CIRCLE_JOB
           background: true
       - run:
           name: Wait for app to be available
