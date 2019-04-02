@@ -26,7 +26,7 @@ public class LogoutServlet extends HttpServlet {
             request.getSession().invalidate();
         }
         String returnUrl = String.format("%s://%s", request.getScheme(), request.getServerName());
-        if (request.getServerPort() != 80 && request.getServerPort() != 443) {
+        if ((request.getScheme().equals("http") && request.getServerPort() != 80) || (request.getScheme().equals("https") && request.getServerPort() != 443)) {
             returnUrl += ":" + request.getServerPort();
         }
         returnUrl += "/login";
