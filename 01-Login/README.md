@@ -44,10 +44,16 @@ Keep in mind that the server uses `POST` to return an Implicit Grant result, you
 
 ### Running the sample
 
-Open a terminal, go to the project root directory and run the following command:
+Open a terminal or command line, navigate to the `01-Login` directory, and run the following command:
 
 ```bash
 ./gradlew clean appRun
+```
+
+If you are using a Windows environment, run the following command:
+
+```bash
+gradlew clean appRun
 ```
 
 The server will be accessible on http://localhost:3000/portal/home. After logging in you should see the `token` in the header.
