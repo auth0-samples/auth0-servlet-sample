@@ -5,8 +5,8 @@ apply plugin: 'war'
 apply from: 'https://raw.githubusercontent.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 compileJava {
-    sourceCompatibility '1.7'
-    targetCompatibility '1.7'
+    sourceCompatibility '1.8'
+    targetCompatibility '1.8'
 }
 
 gretty {
@@ -24,5 +24,4 @@ dependencies {
     compile 'com.auth0:mvc-auth-commons:1.+'
     compile 'javax.servlet:javax.servlet-api:3.1.0'
     runtime 'javax.servlet:jstl:1.2'
-    testCompile 'junit:junit:4.12'
 }
