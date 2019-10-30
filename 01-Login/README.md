@@ -3,17 +3,22 @@
 
 ## Getting started
 
-This sample demonstrates how to use Auth0 to perform authentication using the `mvc-auth-commons` library. Download or clone this repository and follow the instructions below to setup the sample.
+This sample demonstrates how to use Auth0 to perform authentication using the Auth0 Java MVC Commons library in a Java Servlet web application. Download or clone this repository and follow the instructions below to configure and run the application.
+
+To learn more about the Auth0 Java MVC Commons library, refer to the project's [documentation](https://github.com/auth0/auth0-java-mvc-common/blob/master/README.md).
 
 ### Auth0 Dashboard
-1. On the [Auth0 Dashboard](https://manage.auth0.com/#/clients) create a new Application of type **Regular Web Application**.
-1. On the **Settings** tab of your application, add the URL `http://localhost:3000/callback` to the **Allowed Callback URLs** field.
-1. On the **Settings** tab of your application, add the URL `http://localhost:3000/login` to the **Allowed Logout URLs** field.
-1. Copy the `Domain`, `Client ID` and `Client Secret` values at the top of the page and use them to configure the Java Application.
 
+1. On the [Auth0 Dashboard](https://manage.auth0.com/#/clients), click **CREATE APPLICATION**, provide a name for your Application, select **Regular Web Application**, and click **Create**
+1. Go to the **Settings** tab of your Application
+1. Add the URL `http://localhost:3000/callback` to the **Allowed Callback URLs** field
+1. Add the URL `http://localhost:3000/login` to the **Allowed Logout URLs** field
+1. Click **SAVE CHANGES**
+1. The `Domain`, `Client ID`, and `Client Secret` values will be used next to configure the Java application
 
 ### Java Application
-Set the client values in the `src/main/webapp/WEB-INF/web.xml` file. They are read by the `AuthenticationControllerProvider` class.
+
+Set the client values in the `src/main/webapp/WEB-INF/web.xml` file.
 
 ```xml
 <context-param>
@@ -43,7 +48,7 @@ AuthenticationController.newBuilder(domain, clientId, clientSecret)
     .build();
 ```
 
-See the [mvc-auth-commons](https://github.com/auth0/auth0-java-mvc-common) repository for additional configuration options.
+These values are used by the the `AuthenticationControllerProvider` to configure the Auth0 Java MVC Commons library, to enable users to login to the application.
 
 ### Running the sample
 
