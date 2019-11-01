@@ -18,7 +18,7 @@ To learn more about the Auth0 Java MVC Commons library, refer to the project's [
 
 ### Java Application
 
-Set the client values in the `src/main/webapp/WEB-INF/web.xml` file.
+Set the Auth0 Application values from above in the `src/main/webapp/WEB-INF/web.xml` file.
 
 ```xml
 <context-param>
