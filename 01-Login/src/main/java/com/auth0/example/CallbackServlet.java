@@ -84,7 +84,7 @@ public class CallbackServlet extends HttpServlet {
 
     private void handle(HttpServletRequest req, HttpServletResponse res) throws IOException {
         try {
-            Tokens tokens = authenticationController.handle(req);
+            Tokens tokens = authenticationController.handle(req, res);
             SessionUtils.set(req, "accessToken", tokens.getAccessToken());
             SessionUtils.set(req, "idToken", tokens.getIdToken());
             res.sendRedirect(redirectOnSuccess);
