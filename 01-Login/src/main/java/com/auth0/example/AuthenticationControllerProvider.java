@@ -22,6 +22,7 @@ public abstract class AuthenticationControllerProvider {
         JwkProvider jwkProvider = new JwkProviderBuilder(domain).build();
         return AuthenticationController.newBuilder(domain, clientId, clientSecret)
                 .withJwkProvider(jwkProvider)
+//                .withOrganization("org_KGZvWnYaUz8jTCxU")
                 .build();
     }
 }

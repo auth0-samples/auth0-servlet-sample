@@ -17,11 +17,16 @@ gretty {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-    compile 'com.auth0:mvc-auth-commons:1.+'
+//    compile 'com.auth0:mvc-auth-commons:1.+'
+//    compile 'com.auth0:mvc-auth-commons:1.3.0'
+    compile 'com.auth0:mvc-auth-commons:1.5.0-SNAPSHOT'
+    compile 'com.auth0:auth0:1.23.0'
+    compile 'com.auth0:java-jwt:3.10.3'
     compile 'javax.servlet:javax.servlet-api:3.1.0'
     runtime 'javax.servlet:jstl:1.2'
 }

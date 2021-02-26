@@ -6,14 +6,14 @@
          metadata-complete="false">
     <context-param>
         <param-name>com.auth0.domain</param-name>
-        <param-value>{DOMAIN}</param-value>
+        <param-value>elkdanger.eu.auth0.com</param-value>
     </context-param>
     <context-param>
         <param-name>com.auth0.clientId</param-name>
-        <param-value>{CLIENT_ID}</param-value>
+        <param-value>uMFv3PWTJtK7PeEndjfyV3kGzCQpV5OG</param-value>
     </context-param>
     <context-param>
         <param-name>com.auth0.clientSecret</param-name>
-        <param-value>{CLIENT_SECRET}</param-value>
+        <param-value>KwgeYZ0GcW0SlUTQgcIdNOX_k3JJs9PVo2YpqShfWOEx9O7TfbTdF_yStYq9QYka</param-value>
     </context-param>
 </web-app>
