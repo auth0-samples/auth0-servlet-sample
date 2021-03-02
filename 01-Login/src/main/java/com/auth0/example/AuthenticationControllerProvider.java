@@ -13,6 +13,7 @@ public abstract class AuthenticationControllerProvider {
         String domain = config.getServletContext().getInitParameter("com.auth0.domain");
         String clientId = config.getServletContext().getInitParameter("com.auth0.clientId");
         String clientSecret = config.getServletContext().getInitParameter("com.auth0.clientSecret");
+        String orgId = config.getServletContext().getInitParameter("com.auth0.orgId");
 
         if (domain == null || clientId == null || clientSecret == null) {
             throw new IllegalArgumentException("Missing domain, clientId, or clientSecret. Did you update src/main/webapp/WEB-INF/web.xml?");
@@ -22,7 +23,7 @@ public abstract class AuthenticationControllerProvider {
         JwkProvider jwkProvider = new JwkProviderBuilder(domain).build();
         return AuthenticationController.newBuilder(domain, clientId, clientSecret)
                 .withJwkProvider(jwkProvider)
-//                .withOrganization("org_KGZvWnYaUz8jTCxU")
+                .withOrganization(orgId)
                 .build();
     }
 }
