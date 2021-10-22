@@ -9,7 +9,7 @@ To learn more about the Auth0 Java MVC Commons library, refer to the project's [
 
 ### Auth0 Dashboard
 
-1. On the [Auth0 Dashboard](https://manage.auth0.com/#/clients), click **CREATE APPLICATION**, provide a name for your Application, select **Regular Web Application**, and click **Create**
+1. On the [Auth0 Dashboard](https://manage.auth0.com/dashboard/) expand Applications > Application and click **CREATE APPLICATION** (or use the default one), provide a name for your Application, select **Regular Web Application**, and click **Create**
 1. Go to the **Settings** tab of your Application
 1. Add the URL `http://localhost:3000/callback` to the **Allowed Callback URLs** field
 1. Add the URL `http://localhost:3000/login` to the **Allowed Logout URLs** field
