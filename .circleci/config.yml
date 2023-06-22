@@ -50,7 +50,7 @@ jobs:
       image: << pipeline.parameters.machine_image >>
     steps:
       - checkout
-      - run: git clone -b chore/update-deps https://github.com/auth0-samples/spa-quickstarts-tests scripts
+      - run: git clone -b refactor-for-java https://github.com/auth0-samples/spa-quickstarts-tests scripts
       - persist_to_workspace:
           root: ~/
           paths:
