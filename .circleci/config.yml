@@ -56,7 +56,7 @@ jobs:
           paths:
             - project
             - scripts
-  01-login:
+  login:
     machine:
       image: << pipeline.parameters.machine_image >>
     environment:
@@ -70,7 +70,7 @@ workflows:
     jobs:
       - checkout:
           context: Quickstart Web App Test
-      - 01-login:
+      - login:
           context: Quickstart Web App Test
           requires:
             - checkout
