@@ -1,4 +1,4 @@
-FROM gradle:4.2-jdk8
+FROM gradle:8.1.1-jdk11
 
 WORKDIR /home/gradle
 ADD . /home/gradle

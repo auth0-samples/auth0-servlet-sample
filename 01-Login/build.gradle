@@ -1,8 +1,11 @@
-group = 'com.auth0'
+plugins {
+    id "java"
+    id "war"
+    id "org.gretty" version "3.1.1"
+}
 
-apply plugin: 'java'
-apply plugin: 'war'
-apply from: 'https://raw.githubusercontent.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+group = 'com.auth0'
 
 compileJava {
     sourceCompatibility '1.8'
@@ -13,7 +16,7 @@ gretty {
     httpPort = 3000
     host = '0.0.0.0'
     contextPath = '/'
-    servletContainer 'tomcat8'
+    servletContainer 'tomcat9'
 }
 
 repositories {
@@ -21,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.auth0:mvc-auth-commons:1.+'
-    compile 'javax.servlet:javax.servlet-api:3.1.0'
-    runtime 'javax.servlet:jstl:1.2'
+    implementation 'com.auth0:mvc-auth-commons:1.+'
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    runtimeOnly 'javax.servlet:jstl:1.2'
 }
