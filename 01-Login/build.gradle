@@ -24,7 +24,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.auth0:mvc-auth-commons:1.+'
+//    implementation 'com.auth0:mvc-auth-commons:1.+'
+    implementation files('mvc-auth-commons-1.10.0-SNAPSHOT.jar')
     implementation 'javax.servlet:javax.servlet-api:3.1.0'
     runtimeOnly 'javax.servlet:jstl:1.2'
 }
