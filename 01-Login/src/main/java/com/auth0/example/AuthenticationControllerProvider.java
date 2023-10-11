@@ -14,9 +14,9 @@ import java.io.UnsupportedEncodingException;
  * Note that each application instance should only create <strong>one</strong> instance of the {@linkplain AuthenticationController}
  * per domain and application to minimize unnecessary resource usage.
  */
-class AuthenticationControllerSingleton {
+class AuthenticationControllerProvider {
 
-    private AuthenticationControllerSingleton() {}
+    private AuthenticationControllerProvider() {}
 
     private static AuthenticationController INSTANCE;
 
