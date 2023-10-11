@@ -48,7 +48,7 @@ public class CallbackServlet extends HttpServlet {
         redirectOnFail = "/login";
 
         try {
-            authenticationController = AuthenticationControllerProvider.getInstance(config);
+            authenticationController = AuthenticationControllerSingleton.getInstance(config);
         } catch (UnsupportedEncodingException e) {
             throw new ServletException("Couldn't create the AuthenticationController instance. Check the configuration.", e);
         }

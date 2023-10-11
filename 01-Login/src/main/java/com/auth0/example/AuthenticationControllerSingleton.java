@@ -7,9 +7,25 @@ import com.auth0.jwk.JwkProviderBuilder;
 import javax.servlet.ServletConfig;
 import java.io.UnsupportedEncodingException;
 
-public abstract class AuthenticationControllerProvider {
+/**
+ * A class that manages a singleton instance of a {@link JwkProvider} and {@link AuthenticationController} to be used
+ * by Servlets to authenticate users with Auth0.
+ * <p>
+ * Note that each application instance should only create <strong>one</strong> instance of the {@linkplain AuthenticationController}
+ * per domain and application to minimize unnecessary resource usage.
+ */
+class AuthenticationControllerSingleton {
 
-    public static AuthenticationController getInstance(ServletConfig config) throws UnsupportedEncodingException {
+    private AuthenticationControllerSingleton() {}
+
+    private static AuthenticationController INSTANCE;
+
+    // if multiple threads may call this, synchronize this method and consider double locking
+    static AuthenticationController getInstance(ServletConfig config) throws UnsupportedEncodingException {
+        if (INSTANCE != null) {
+            return INSTANCE;
+        }
+
         String domain = config.getServletContext().getInitParameter("com.auth0.domain");
         String clientId = config.getServletContext().getInitParameter("com.auth0.clientId");
         String clientSecret = config.getServletContext().getInitParameter("com.auth0.clientSecret");
