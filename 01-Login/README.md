@@ -66,6 +66,27 @@ gradlew clean appRun
 
 The server will be accessible on http://localhost:3000/portal/home. After logging in you should see the `token` in the header.
 
+### Performing load tests with Apache Bench
+
+There are two endpoints that can be used to load test verifying JWTs:
+
+- `/javajwt` - Verifies a JWT using the `java-jwt` library. Handled by `JavaJwtVerifierServlet`. 
+- `/nimbus`- Verifies a JWT using the `nimbus-jose-jwt` library. Handled by `NimbusVerifierServlet`.
+
+You can make a `GET` request to each endpoint, passing a JWT as a query parameter (for simplicity).
+
+You can use Apache Bench to execute load tests against these endpoints:
+
+```bash
+## execute 10000 requests with 10 concurrent using nimbus
+ab -n 100000 -c 100 -rk "http://localhost:3000/nimbus?jwt=<JWT-HERE>"
+
+## execute 10000 requests with 10 concurrent using java-jwt
+ab -n 100000 -c 100 -rk "http://localhost:3000/javajwt?jwt=<JWT-HERE>"
+```
+
+You can also use the `run.sh` script to execute a set of tests using Apache Bench. Once the application has started, open another terminal window and run `./run.sh`. This will execute Apache Bench to verify a JWT using both `java-jwt` and `nimbus-jose-jwt` with varying number of requests and concurrent settings. The results from Apache Bench will be written to `results.txt`.
+
 ### Running the sample with Docker
 
 In order to run the example with docker you need to have `docker` installed.

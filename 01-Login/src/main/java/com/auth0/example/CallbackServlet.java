@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The Servlet endpoint used as the callback handler in the OAuth 2.0 authorization code grant flow.
@@ -84,7 +85,10 @@ public class CallbackServlet extends HttpServlet {
 
     private void handle(HttpServletRequest req, HttpServletResponse res) throws IOException {
         try {
+            long start = System.nanoTime();
             Tokens tokens = authenticationController.handle(req, res);
+            long end = System.nanoTime();
+            System.out.println("Time taken to perform the code exchange and verify the ID token: " + TimeUnit.MILLISECONDS.convert(end - start, TimeUnit.NANOSECONDS));
             SessionUtils.set(req, "accessToken", tokens.getAccessToken());
             SessionUtils.set(req, "idToken", tokens.getIdToken());
             res.sendRedirect(redirectOnSuccess);
