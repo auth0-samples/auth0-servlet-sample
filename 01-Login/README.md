@@ -73,7 +73,7 @@ There are two endpoints that can be used to load test verifying JWTs:
 - `/javajwt` - Verifies a JWT using the `java-jwt` library. Handled by `JavaJwtVerifierServlet`. 
 - `/nimbus`- Verifies a JWT using the `nimbus-jose-jwt` library. Handled by `NimbusVerifierServlet`.
 
-You can make a `GET` request to each endpoint, passing a JWT as a query parameter (for simplicity).
+You can make a `GET` request to each endpoint, passing a JWT as a query parameter (for simplicity). You can obtain a JWT from the Auth0 Quickstarts tenant, using the Quickstarts API.
 
 You can use Apache Bench to execute load tests against these endpoints:
 
