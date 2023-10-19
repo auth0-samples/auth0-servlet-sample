@@ -85,7 +85,12 @@ ab -n 100000 -c 100 -rk "http://localhost:3000/nimbus?jwt=<JWT-HERE>"
 ab -n 100000 -c 100 -rk "http://localhost:3000/javajwt?jwt=<JWT-HERE>"
 ```
 
-You can also use the `run.sh` script to execute a set of tests using Apache Bench. Once the application has started, open another terminal window and run `./run.sh`. This will execute Apache Bench to verify a JWT using both `java-jwt` and `nimbus-jose-jwt` with varying number of requests and concurrent settings. The results from Apache Bench will be written to `results.txt`.
+You can also use the `nimbustests.sh` and `javajwttests.sh` scripts to execute a set of tests using Apache Bench. Once the application has started, open another terminal window and run the script. This will execute Apache Bench to verify a JWT using both `java-jwt` and `nimbus-jose-jwt`, passing a JWT as an argument, with varying number of requests and concurrent settings. The results from Apache Bench will be written to `jwt-results.txt` and `nimbus-results.txt` respectively.
+
+```bash
+./javajwttests.sh <JWT>
+./nimbustests.sh <JWT>
+```
 
 ### Running the sample with Docker
 
