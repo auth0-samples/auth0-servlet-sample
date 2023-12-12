@@ -1,22 +1,24 @@
 
 # Auth0 Servlet Sample
 
-## Getting started
-
 This sample demonstrates how to use Auth0 to perform authentication using the Auth0 Java MVC Commons library in a Java Servlet web application. Download or clone this repository and follow the instructions below to configure and run the application.
 
 To learn more about the Auth0 Java MVC Commons library, refer to the project's [documentation](https://github.com/auth0/auth0-java-mvc-common/blob/master/README.md).
 
+## Prerequisites
+
+- Java 8 or greater
+- An Auth0 account
+
+## Configuration
+
 ### Auth0 Dashboard
+1. On the [Auth0 Dashboard](https://manage.auth0.com/#/clients) create a new Application of type **Regular Web Application**.
+1. On the **Settings** tab of your application, add the URL `http://localhost:3000/callback` to the **Allowed Callback URLs** field.
+1. On the **Settings** tab of your application, add the URL `http://localhost:3000/login` to the **Allowed Logout URLs** field.
+1. Save the changes to your application settings. Don't close this page; you'll need some of the settings when configuring the application below.
 
-1. On the [Auth0 Dashboard](https://manage.auth0.com/#/clients), click **CREATE APPLICATION**, provide a name for your Application, select **Regular Web Application**, and click **Create**
-1. Go to the **Settings** tab of your Application
-1. Add the URL `http://localhost:3000/callback` to the **Allowed Callback URLs** field
-1. Add the URL `http://localhost:3000/login` to the **Allowed Logout URLs** field
-1. Click **SAVE CHANGES**
-1. The `Domain`, `Client ID`, and `Client Secret` values will be used next to configure the Java application
-
-### Java Application
+### Application configuration
 
 Set the Auth0 Application values from above in the `src/main/webapp/WEB-INF/web.xml` file.
 
@@ -36,19 +38,6 @@ Set the Auth0 Application values from above in the `src/main/webapp/WEB-INF/web.
     <param-value>{YOUR_AUTH0_CLIENT_SECRET}</param-value>
 </context-param>
 ```
-
-By default, `mvc-auth-commons` uses the Authorization Code flow and assumes tokens are signed with the HS256 signing algorithm.
-
-If using RS256 (recommended, and the default for new applications), you need to configure the `AuthenticationController` with a `JwkProvider` to fetch the public signing key used to verify the ID token:
-
-```java
-JwkProvider jwkProvider = new JwkProviderBuilder(domain).build();
-AuthenticationController.newBuilder(domain, clientId, clientSecret)
-    .withJwkProvider(jwkProvider)
-    .build();
-```
-
-These values are used by the the `AuthenticationControllerProvider` to configure the Auth0 Java MVC Commons library, to enable users to login to the application.
 
 ### Running the sample
 
